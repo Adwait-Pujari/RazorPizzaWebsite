@@ -1,0 +1,28 @@
+﻿@page
+@model RazorPizzaWebsite.Pages.PizzaModel
+@{
+}
+
+
+<div>
+    <h1 class="display-5" align="center"> Feel free to choose from the variety of pizzas.</h1>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5 mt-5">
+                <div class="w-100 row customPizza">
+                    <div class="col-4">
+                        <img src="~/Images/Pizzas/Create.png" class="w-100" />
+                    </div>
+                    <div class="col-8 align-items-center">
+                        <div class="align-middle customPizzaText">
+                            <h3 style="text-align:left;"> Create your own pizza</h3>
+                            <p style="text-align: left;"> Make you own pizza with the PizzaMaker!</p>
+                            <a class="btn btn-primary" style="float: left" asp-area="" asp-page="Forms/CustomPizza">Make your pizza</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
