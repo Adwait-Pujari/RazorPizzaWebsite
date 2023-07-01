@@ -3,5 +3,19 @@
 @{
 }
 
+<h1> Your Order!</h1>
 
-<a class="nav-link text-dark" asp-area="" asp-page="Checkout/Thankyou">End Page</a>
+@{
+    var imagePath = "~/images/Pizzas/" + (Model.ImageTitle + ".png");
+}
+<div class="align-content-center">
+    <div class="col-3 mx-auto mb-5">
+        <img src="@imagePath" class="w-100" asp-append-version="true" /> <!-- The asp append version true will make sure that the user doesnt need to refresht he page when changes in price and all.-->
+
+        <p> Your Order @Model.PizzaName is ready just one more step to go!</p>
+        <p> Total price for your order is: $@Model.PizzaPrice </p>
+        <br />
+        <a class="btn btn-primary mt-1 mx-auto" asp-area="" asp-page="Thankyou"> Confirm Order </a>
+        
+    </div>
+</div>
