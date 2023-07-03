@@ -24,113 +24,34 @@
                 </div>
             </div>
         </div>
+        
+        @{
+            var imagePathPrefix = "~/images/Pizzas/";
+        }
         <div class="row">
-            <div class="col-4 mb-5 mt-5 pizzaSelector">
-                <div class="row w-100">
-                    <img src="~/Images/Pizzas/Margerita.png" class="w-100" />
-                </div>
-                <div class="row w-100 mt-1 mb-1">
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-primary btn-md w-75" asp-area="" asp-page="Checkout/Checkout">Try Me!</a>
+            @foreach (var pizza in Model.fakePizzaDB)
+            {
+                var imagePath = imagePathPrefix + pizza.ImageTitle + ".png";
+
+                <div class="col-4 mb-5 mt-5 pizzaSelector">
+                    <div class="row w-100">
+                        <img src="@Url.Content(imagePath)" class="w-100" asp-apend-version="true" />
+                    </div>
+                    <div class="row w-100 mt-1 mb-1">
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-primary btn-md w-75" asp-area="" asp-page="Checkout/Checkout"
+                            asp-route-ImageTitle="@pizza.ImageTitle" 
+                            asp-route-PizzaPrice="@pizza.finalPrice">Try Me!</a>
+                        <!-- This routing allows us to link something in the html code-->
+                        <!-- When we use this asp-route-  it takes the following link as passes the value of the model. 
+                        So in the URl we will see that to the checkout page, the value of the  ImageTitle and final price is sent to the checkout page -->
+                        </div>
+
                     </div>
                 </div>
-                
-            </div>
-
-            <div class="col-4 mb-5 mt-5 pizzaSelector">
-                <div class="row w-100">
-                    <img src="~/Images/Pizzas/Bolognese.png" class="w-100" />
-                </div>
-                <div class="row w-100 mt-1 mb-1">
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-primary btn-md w-75" asp-area="" asp-page="Checkout/Checkout">Try Me!</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4 mb-5 mt-5 pizzaSelector">
-                <div class="row w-100">
-                    <img src="~/Images/Pizzas/Hawaiian.png" class="w-100" />
-                </div>
-                <div class="row w-100 mt-1 mb-1">
-                    <div class="d-flex justify-content-center"> 
-                        <a class="btn btn-primary btn-md w-75" asp-area="" asp-page="Checkout/Checkout">Try Me!</a>
-                    </div>
-                </div>
-                
-
-            </div>
+            }
         </div>
+        
 
-        <div class="row">
-            <div class="col-4 mb-5 mt-5 pizzaSelector">
-                <div class="row w-100">
-                    <img src="~/Images/Pizzas/Carbonara.png" class="w-100" />
-                </div>
-                <div class="row w-100 mt-1 mb-1">
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-primary btn-md w-75" asp-area="" asp-page="Checkout/Checkout">Try Me!</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-4 mb-5 mt-5 pizzaSelector">
-                <div class="row w-100">
-                    <img src="~/Images/Pizzas/MeatFeast.png" class="w-100" />
-                </div>
-                <div class="row w-100 mt-1 mb-1">
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-primary btn-md w-75" asp-area="" asp-page="Checkout/Checkout">Try Me!</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4 mb-5 mt-5 pizzaSelector">
-                <div class="row w-100">
-                    <img src="~/Images/Pizzas/Mushroom.png" class="w-100" />
-                </div>
-                <div class="row w-100 mt-1 mb-1">
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-primary btn-md w-75" asp-area="" asp-page="Checkout/Checkout">Try Me!</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-4 mb-5 mt-5 pizzaSelector">
-                <div class="row w-100">
-                    <img src="~/Images/Pizzas/Pepperoni.png" class="w-100" />
-                </div>
-                <div class="row w-100 mt-1 mb-1">
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-primary btn-md w-75" asp-area="" asp-page="Checkout/Checkout">Try Me!</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4 mb-5 mt-5 pizzaSelector">
-                <div class="row w-100">
-                    <img src="~/Images/Pizzas/Seafood.png" class="w-100" />
-                </div>
-                <div class="row w-100 mt-1 mb-1">
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-primary btn-md w-75" asp-area="" asp-page="Checkout/Checkout">Try Me!</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4 mb-5 mt-5 pizzaSelector">
-                <div class="row w-100">
-                    <img src="~/Images/Pizzas/Vegetarian.png" class="w-100" />
-                </div>
-                <div class="row w-100 mt-1 mb-1">
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-primary btn-md w-75" asp-area="" asp-page="Checkout/Checkout">Try Me!</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
