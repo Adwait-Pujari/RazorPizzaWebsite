@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using RazorPizzaWebsite.Data;
+using RazorPizzaWebsite.Models;
 
 namespace RazorPizzaWebsite.Pages.Checkout
 {
@@ -12,6 +14,14 @@ namespace RazorPizzaWebsite.Pages.Checkout
 
         public string ImageTitle { get; set; }
 
+
+        private readonly ApplicationDBContext _context;
+        //Every service we want to use will get injected in constructor after proviidng the given parameter.
+        public CheckoutModel(ApplicationDBContext context)
+        {
+            _context = context;
+        }
+
         public void OnGet()
         {
 
@@ -20,6 +30,15 @@ namespace RazorPizzaWebsite.Pages.Checkout
             if (string.IsNullOrWhiteSpace(ImageTitle))
                 ImageTitle = "Create";
 
+            PizzaOrder pizzaOrder = new PizzaOrder();
+            //Since ID is primary key we dont need write that.
+            pizzaOrder.PizzaName = PizzaName;
+            pizzaOrder.BasePrice = PizzaPrice;
+
+            _context.PizzaOrders.Add(pizzaOrder);
+
+            //Always have to save the database
+            _context.SaveChanges();
         }
     }
 }

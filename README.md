@@ -41,3 +41,5 @@ We require
 				update-database
 
 With this the connection to the sql server is complete and we proceed in adding values to our database.
+
+To access the database in the required pages we need dependency injection.

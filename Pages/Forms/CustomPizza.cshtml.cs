@@ -6,7 +6,7 @@ namespace RazorPizzaWebsite.Pages.Forms
 {
     public class CustomPizzaModel : PageModel
     {
-        [BindProperty] //Now this will alow us to access custom pizzas from out CustomePizza view (i.e the html)
+        [BindProperty] //Now this will alow us to access custom pizzas from out CustomPizza view (i.e the html)
         public PizzasModel Pizza { get; set; }
 
         public float PizzaPrice { get; set; }

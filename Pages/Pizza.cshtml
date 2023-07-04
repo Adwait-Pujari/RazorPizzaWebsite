@@ -41,7 +41,8 @@
                         <div class="d-flex justify-content-center">
                             <a class="btn btn-primary btn-md w-75" asp-area="" asp-page="Checkout/Checkout"
                             asp-route-ImageTitle="@pizza.ImageTitle" 
-                            asp-route-PizzaPrice="@pizza.finalPrice">Try Me!</a>
+                            asp-route-PizzaPrice="@pizza.finalPrice"
+                            asp-route-PizzaName="@pizza.PizzaName">Try Me!</a>
                         <!-- This routing allows us to link something in the html code-->
                         <!-- When we use this asp-route-  it takes the following link as passes the value of the model. 
                         So in the URl we will see that to the checkout page, the value of the  ImageTitle and final price is sent to the checkout page -->
