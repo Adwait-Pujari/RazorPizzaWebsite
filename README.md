@@ -43,3 +43,13 @@ We require
 With this the connection to the sql server is complete and we proceed in adding values to our database.
 
 To access the database in the required pages we need dependency injection.
+
+
+<hr>
+## Credentials
+
+This project was developed based on a tutorial by [Complete ASP.NET 6.0 and Entity Framework free course](https://www.youtube.com/watch?v=7d2UMAIgOLQ), created by [tutorialsEU](https://www.youtube.com/@tutorialsEU).
+
+Please note that this project is not entirely my original creation, and it was built by following the steps and guidance provided in the tutorial. The purpose of this project is for learning and educational purposes, and I have made modifications and additions based on my requirements and understanding.
+
+If you're interested in the tutorial that inspired this project, I highly recommend checking it out [here](https://www.youtube.com/watch?v=7d2UMAIgOLQ). It provides a comprehensive guide on building a similar Razor application and has been a valuable resource in my learning journey.
