@@ -46,6 +46,7 @@ To access the database in the required pages we need dependency injection.
 
 
 <hr>
+
 ## Credentials
 
 This project was developed based on a tutorial by [Complete ASP.NET 6.0 and Entity Framework free course](https://www.youtube.com/watch?v=7d2UMAIgOLQ), created by [tutorialsEU](https://www.youtube.com/@tutorialsEU).
